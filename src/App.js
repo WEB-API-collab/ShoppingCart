@@ -1,6 +1,9 @@
 import React from 'react';
 import data from './data';
+import { BrowserRouter, Route,  Link } from 'react-router-dom';
 import './App.css';
+import HomeSc from './pages/home';
+import ProductSc from './pages/product';
 
 function App() {
 
@@ -13,13 +16,14 @@ function App() {
   }
 
   return (
+  <BrowserRouter>
     <div className="grid-container">
     <header className="header">
       <div className="brand">
         <button onClick={openMenu}>
           &#9776;
         </button>
-        <a href="index.html">Neuro Cart</a>
+        <Link to= "/">Neuro Cart</Link>
       </div>
       <div className="header-links">
         <a href="cart.html">Cart</a>
@@ -49,31 +53,18 @@ function App() {
       </ul>
     </aside>
     <main className="main">
-      <div className="content">
-          <ul className="products">
-            {
-              data.products.map(product =>
-                <li>
-                  <div className="product">
-                    <img className="product-image" src={product.image} alt="product" />
-                    <div className="product-name">
-                      <a href="product.html">{product.name}</a>
-                    </div>
-                    <div className="product-brand">{product.brand}</div>
-                    <div className="product-price">{product.price}</div>
-                    <div className="product-rating">{product.rating}</div>
-                  </div>
-                </li>)
-            
-            }
-      </ul>
+          <div className="content">
+          <Route path = "/product/:id" component={ProductSc}/>
+          <Route path = "/" exact ={true} component={HomeSc}/>
+          
       </div>
 
     </main>
     <footer className="footer">
       All right reserved.
     </footer>
-  </div>
+      </div>
+  </BrowserRouter>
   );
 }
 
