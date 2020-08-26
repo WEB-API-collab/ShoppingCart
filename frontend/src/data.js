@@ -8,7 +8,8 @@ export default {
         price: 260000,
         brand: ' Asus',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
       },
 
       {
@@ -19,7 +20,8 @@ export default {
         price: 260000,
         brand: ' Asus',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
       },
 
       {
@@ -30,7 +32,8 @@ export default {
         price: 260000,
         brand: ' Asus',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
       },
 
       {
@@ -41,7 +44,8 @@ export default {
         price: 260000,
         brand: ' Asus',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
       },
 
       {
@@ -52,7 +56,8 @@ export default {
         price: 260000,
         brand: ' Asus',
         rating: 4.5,
-        numReviews: 2
+        numReviews: 10,
+        countInStock: 6,
       },
       
     ]

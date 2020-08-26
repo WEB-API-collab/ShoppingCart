@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
-import logo from './logo.svg';
 import './App.css';
 import HomeScreen from './sscreens/HomeScreen';
 import ProductScreen from './sscreens/ProductScreen';
+import CartScreen from './sscreens/CartScreen';
 
 function App() {
 
@@ -14,8 +14,6 @@ function App() {
   const closeMenu = () => {
     document.querySelector(".sidebar").classList.remove("open");    
   }
-
-
 
   return (
 
@@ -59,6 +57,7 @@ function App() {
         <div className="content">
             
             <Route path="/product/:id" component={ProductScreen} />
+            <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
             
           </div>
