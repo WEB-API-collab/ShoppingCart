@@ -1,0 +1,4 @@
+Delete src,public and images
+
+run react          cd frontend ----> npm start
+run server         npm start
