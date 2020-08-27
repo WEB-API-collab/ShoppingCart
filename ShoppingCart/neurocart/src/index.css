@@ -228,6 +228,13 @@ a > .rating > span:last-child {
 }
 .button.secondary {
   background-color: #f0f0f0;
+  color: 	#9d2c44 ;
+}
+.button.google{
+  background-color: #bf0000;
+  color: #c0c0c0;
+  text-align: center;
+  margin-top: 2rem;
 }
 .text-center {
   text-align: center;
