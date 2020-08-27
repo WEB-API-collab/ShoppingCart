@@ -59,7 +59,7 @@ function ProductsScreen(props) {
   return <div className="content content-margined">
 
     <div className="product-header">
-      <h3>Products</h3>
+      <h2>Create / Update Products</h2>
       <button className="button create" onClick={() => openModal({})}>Create Product</button>
     </div>
     {modalVisible &&

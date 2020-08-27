@@ -142,8 +142,9 @@ a:hover{
   transition: all 5se;
   transform: translateX(-30rem);
   width: 30rem;
-  background-color: #6a2c70;
+  background-color: #0b0414;
   height: 100%;
+  color: #f0f0f0;
   
 }
 .sidebar.open{
@@ -162,6 +163,20 @@ a:hover{
   position: absolute;
   right: .5rem;
   top: 1.5rem
+  
+}
+.main.text{
+  color: rgb(255, 255, 255);
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-weight: lighter;
+}
+
+.sub.text{
+  color: rgb(255, 255, 255);
+  margin-top: 2rem;
+  margin-left: 2rem;
+  font-weight: lighter;
 }
 
 /* Product Details */
@@ -332,7 +347,7 @@ input{
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-top: 2rem;
+  margin-top: 4rem;
 
 }
 
@@ -356,7 +371,7 @@ tbody>tr:nth-child(odd){
   font-weight: bold;
   color: #000000;
   text-align: center;
-  margin-top: 4rem;
+  margin-top: 2rem;
   
 }
 

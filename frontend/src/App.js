@@ -8,6 +8,7 @@ import SigninScreen from './sscreens/SignInScreen';
 import { useSelector } from 'react-redux';
 import RegisterScreen from './sscreens/RegisterScreen';
 import ProductsScreen from './sscreens/ProductsScreen';
+//import ShippingScreen from './sscreens/ShippingScreen';
 
 function App() {
 
@@ -46,16 +47,12 @@ function App() {
     </header> 
 
     <aside className ="sidebar">
-        <h3>Shopping Categories</h3>
+        <h3 className = "main text">Shopping Categories</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>x</button>
         <ul>
-            <li>
-                <a href="index.html">Laptops</a>
-            </li> 
+            <li><a href="index.html">Laptops</a></li> 
 
-            <li>
-                <a href="index.html">Gaming PCs</a>
-            </li> 
+            <li><a href="index.html">Gaming PCs</a></li> 
 
 
         </ul>        
@@ -67,6 +64,7 @@ function App() {
         <div className="content">
 
             <Route path="/products" component={ProductsScreen} />
+            
             <Route path="/signin" component={SigninScreen} />
             <Route path="/register" component={RegisterScreen} />            
             <Route path="/product/:id" component={ProductScreen} />

@@ -10,10 +10,10 @@ function SigninScreen(props) {
   const userSignin = useSelector(state => state.userSignin);
   const { loading, userInfo, error } = userSignin;
   const dispatch = useDispatch();
-
+  const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
   useEffect(() => {
     if (userInfo) {
-      props.history.push("/");
+      props.history.push(redirect);
     }
     return () => {
       //
@@ -48,14 +48,14 @@ function SigninScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Sign In</button>
+          <button type="submit" className="button primary">Signin</button>
         </li>
         <li>
           New to NeuroCart?
         </li>
         <li>
-          <Link to="/register" className="button secondary text-center" >Create Account</Link>
-          <Link to="/register" className="button google" >Sign In with Google</Link>
+          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create Account</Link>
+          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button google" >Sign In with Google</Link>
         </li>
       </ul>
     </form>
