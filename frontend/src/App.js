@@ -8,7 +8,10 @@ import SigninScreen from './sscreens/SignInScreen';
 import { useSelector } from 'react-redux';
 import RegisterScreen from './sscreens/RegisterScreen';
 import ProductsScreen from './sscreens/ProductsScreen';
-//import ShippingScreen from './sscreens/ShippingScreen';
+import ShippingScreen from './sscreens/ShippingScreen';
+import PaymentScreen from './sscreens/PaymentScreen';
+import PlaceOrderScreen from './sscreens/PlaceOrderScreen';
+
 
 function App() {
 
@@ -38,6 +41,7 @@ function App() {
       
       <div className="header-links">
         <a href="index.html">Home</a>
+        <a href="index.html">FAQs</a>
         <a href="cart.html">My Cart</a>
             {
               userInfo ? <Link to="/profile">{userInfo.name}</Link> :
@@ -64,9 +68,11 @@ function App() {
         <div className="content">
 
             <Route path="/products" component={ProductsScreen} />
-            
+            <Route path="/shipping" component={ShippingScreen} />
+            <Route path="/payment" component={PaymentScreen} />
+            <Route path="/placeorder" component={PlaceOrderScreen} />
             <Route path="/signin" component={SigninScreen} />
-            <Route path="/register" component={RegisterScreen} />            
+            <Route path="/register" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
