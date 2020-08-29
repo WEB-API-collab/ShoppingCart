@@ -7,6 +7,7 @@ import CartSc from './pages/cart';
 import SigninSc from './pages/signin';
 import { useSelector } from 'react-redux';
 import RegisterSc from './pages/register';
+import ProductsSc from './pages/products';
 
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
         </aside>
         <main className="main">
           <div className="content">
+          <Route path="/products" component={ProductsSc} />
             <Route path="/signin" component={SigninSc} />
             <Route path="/register" component={RegisterSc} />
             <Route path="/product/:id" component={ProductSc} />

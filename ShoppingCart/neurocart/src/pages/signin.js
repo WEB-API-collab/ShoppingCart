@@ -56,9 +56,9 @@ function SigninSc(props) {
         <li>
           <Link to="/register" className="button secondary text-center" >Create your NeuroCart account</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to="/register" className="button google " >Sign in with Google</Link>
-        </li>
+        </li> */}
       </ul>
     </form>
   </div>
