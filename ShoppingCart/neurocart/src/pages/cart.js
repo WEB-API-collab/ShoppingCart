@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-function CartSc(props) {
+function CartScreen(props) {
 
   const cart = useSelector(state => state.cart);
 
@@ -66,7 +66,7 @@ function CartSc(props) {
                   </div>
                 </div>
                 <div className="cart-price">
-                  ${item.price}
+                  LKR{item.price}
                 </div>
               </li>
             )
@@ -78,7 +78,7 @@ function CartSc(props) {
       <h3>
         Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
         :
-         $ {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+         LKR {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
       </h3>
       <button onClick={checkoutHandler} className="button primary full-width" disabled={cartItems.length === 0}>
         Proceed to Checkout
@@ -89,4 +89,4 @@ function CartSc(props) {
   </div>
 }
 
-export default CartSc; 
+export default CartScreen; 

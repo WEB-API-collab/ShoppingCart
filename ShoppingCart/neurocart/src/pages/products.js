@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userActions';
 import { saveProduct, listProducts, deleteProdcut } from '../actions/productActions';
 
-function ProductsSc(props) {
+function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
   const [id, setId] = useState('');
   const [name, setName] = useState('');
@@ -60,8 +59,8 @@ function ProductsSc(props) {
   return <div className="content content-margined">
 
     <div className="product-header">
-      <h3>Products</h3>
-      <button className="button primary" onClick={() => openModal({})}>Create Product</button>
+      <h2>Create / Update Products</h2>
+      <button className="button create" onClick={() => openModal({})}>Create Product</button>
     </div>
     {modalVisible &&
       <div className="form">
@@ -124,7 +123,7 @@ function ProductsSc(props) {
               <textarea name="description" value={description} id="description" onChange={(e) => setDescription(e.target.value)}></textarea>
             </li>
             <li>
-              <button type="submit" className="button primary">{id ? "Update" : "Create"}</button>
+              <button type="submit" className="button update">{id ? "Update" : "Create"}</button>
             </li>
             <li>
               <button type="button" onClick={() => setModalVisible(false)} className="button secondary">Back</button>
@@ -156,7 +155,7 @@ function ProductsSc(props) {
             <td>{product.category}</td>
             <td>{product.brand}</td>
             <td>
-              <button className="button" onClick={() => openModal(product)} >Edit</button>
+              <button className="button edit" onClick={() => openModal(product)} >Edit</button>
               {' '}
               <button className="button" onClick={() => deleteHandler(product)} >Delete</button>
             </td>
@@ -167,4 +166,4 @@ function ProductsSc(props) {
     </div>
   </div>
 }
-export default ProductsSc; 
+export default ProductsScreen;

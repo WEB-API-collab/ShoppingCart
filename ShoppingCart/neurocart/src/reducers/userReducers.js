@@ -1,6 +1,6 @@
 import {
-    USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGISTER_REQUEST,
-    USER_REGISTER_SUCCESS, USER_REGISTER_FAIL
+  USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS, USER_SIGNIN_FAIL, USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS, USER_REGISTER_FAIL
 } from "../constants/usercons";
 
 function userSigninReducer(state = {}, action) {
@@ -28,4 +28,4 @@ function userRegisterReducer(state = {}, action) {
 }
 export {
   userSigninReducer, userRegisterReducer
-} 
+}

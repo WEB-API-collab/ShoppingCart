@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { detailsProduct } from '../actions/productActions';
 
-function ProductSc(props) {
-  
+function ProductScreen(props) {
   const [qty, setQty] = useState(1);
   const productDetails = useSelector(state => state.productDetails);
   const { product, loading, error } = productDetails;
@@ -22,11 +21,10 @@ function ProductSc(props) {
   }
 
   return <div>
-  <div className="back-to-result">
-    <Link to="/">Back to result</Link>
-  </div>
-  
-  {loading ? <div>Loading...</div> :
+    <div className="back-to-result">
+      <Link to="/">Back to result</Link>
+    </div>
+    {loading ? <div>Loading...</div> :
       error ? <div>{error} </div> :
         (
           <div className="details">
@@ -41,13 +39,13 @@ function ProductSc(props) {
                 <li>
                   {product.rating} Stars ({product.numReviews} Reviews)
           </li>
-          <li>
-                  Price: <b>${product.price}</b>
+                <li>
+                  Price: <b>LKR {product.price}</b>
                 </li>
                 <li>
                   Description:
             <div>
-            {product.description}
+                    {product.description}
                   </div>
                 </li>
               </ul>
@@ -68,7 +66,8 @@ function ProductSc(props) {
                   </select>
                 </li>
                 <li>
-                  {product.countInStock > 0 && <button onClick={handleAddToCart} className="button primary" >Add to Cart</button>
+                  {product.countInStock > 0 && <button onClick={handleAddToCart}
+                    className="button primary" >Add to Cart</button>
                   }
                 </li>
               </ul>
@@ -76,6 +75,8 @@ function ProductSc(props) {
           </div>
         )
     }
-</div>
+
+
+  </div>
 }
-export default ProductSc;
+export default ProductScreen;

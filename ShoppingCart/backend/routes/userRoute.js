@@ -1,5 +1,5 @@
 import express from 'express';
-import User from '../models/userModels';
+import User from '../models/userModel';
 import { getToken } from '../util';
 
 const router = express.Router();
@@ -45,12 +45,11 @@ router.post('/signin', async (req, res) => {
     }
   
   })
-  
 
 router.get("/createadmin", async (req, res) => {
   try {
     const user = new User({
-      name: 'wickramasinghe',
+      name: 'Piumi',
       email: 'piuminibm.2020@gmail.com',
       password: '1234*',
       isAdmin: true
@@ -62,4 +61,4 @@ router.get("/createadmin", async (req, res) => {
   }
 });
 
-export default router;
+export default router; 
