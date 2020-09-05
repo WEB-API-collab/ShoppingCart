@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../actions/userActions';
+import { signin, googleAuth } from '../actions/userActions';
 
 function SigninScreen(props) {
 
@@ -25,6 +25,13 @@ function SigninScreen(props) {
     dispatch(signin(email, password));
 
   }
+
+  const googleAuthHandler = (e) => {
+    e.preventDefault();
+    dispatch(googleAuth());
+
+  }
+
   return <div className="form">
     <form onSubmit={submitHandler} >
       <ul className="form-container">
@@ -48,14 +55,14 @@ function SigninScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Signin</button>
+          <button type="submit" className="button primary">Sign-In</button>
+          <button type="button" className="button google" onClick={googleAuthHandler}>Sign-In with Google</button>
         </li>
         <li>
           New to NeuroCart?
         </li>
         <li>
           <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create Account</Link>
-          <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button google" >Sign In with Google</Link>
         </li>
       </ul>
     </form>

@@ -12,6 +12,7 @@ import ShippingScreen from './sscreens/ShippingScreen';
 import PaymentScreen from './sscreens/PaymentScreen';
 import PlaceOrderScreen from './sscreens/PlaceOrderScreen';
 import OrderScreen from './sscreens/OrderScreen';
+import ProfileScreen from './sscreens/ProfileScreen';
 import KommunicateChat from './chat';
 
 
@@ -70,6 +71,7 @@ function App() {
     <main className="main">
         <div className="content">
 
+            <Route path="/profile" component={ProfileScreen} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/products" component={ProductsScreen} />
             <Route path="/shipping" component={ShippingScreen} />

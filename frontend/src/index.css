@@ -329,8 +329,9 @@ align-items: flex-end;
 
 .button.google{
   
-  background-color: #df3d3d;  
-  color: #fdfafa;
+  background-color: #ffffff;  
+  color: #4c8bf5;
+  border-color: #4c8bf5;
   text-align: center;
   margin-top: 2rem;
 }
@@ -523,4 +524,20 @@ tbody>tr:nth-child(odd){
     font-size: 2rem;
     font-weight: bold;
     color: #c04000;
+}
+
+/* Profile */
+
+.profile{
+  display: flex;  
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+.profile-info{
+  flex: 1 1 30rem;
+}
+.profile-orders{
+  flex: 3 1 60rem;
+  margin-top: 4rem;  
 }

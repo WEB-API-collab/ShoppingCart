@@ -1,0 +1,34 @@
+
+Web client ID 
+803780212034-e583sd2slch83nfuopo7nsvem59vrtvm.apps.googleusercontent.com
+
+
+
+Web client secre
+Cmyo-7zn_fyO_FrNZdnoGOYo
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBoDq8ULNFhCFKh3xq-5dnUxG_gwVO2D0M",
+    authDomain: "test-pptt.firebaseapp.com",
+    databaseURL: "https://test-pptt.firebaseio.com",
+    projectId: "test-pptt",
+    storageBucket: "test-pptt.appspot.com",
+    messagingSenderId: "803780212034",
+    appId: "1:803780212034:web:b73b2139a876eb028484db",
+    measurementId: "G-E9EPEL2GKJ"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>

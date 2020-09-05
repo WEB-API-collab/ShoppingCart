@@ -41,8 +41,8 @@ function CartScreen(props) {
               Cart is empty
           </div>
             :
-            cartItems.map(item =>
-              <li>
+            cartItems.map((item, id) =>
+              <li key={id}>
                 <div className="cart-image">
                   <img src={item.image} alt="product" />
                 </div>
@@ -76,7 +76,7 @@ function CartScreen(props) {
     </div>
     <div className="cart-action">
       <h3>
-        Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
+        Subtotal ( {cartItems.reduce((a, c) => a + parseInt(c.qty), 0)} items)
         :
          LKR {cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
       </h3>

@@ -77,8 +77,8 @@ function PlaceOrderScreen(props) {
                   Cart is Empty
           </div>
                 :
-                cartItems.map(item =>
-                  <li>
+                cartItems.map((item, id) =>
+                  <li key={id}>
                     <div className="cart-image">
                       <img src={item.image} alt="product" />
                     </div>
