@@ -7,7 +7,9 @@ export default {
         image: '/images/1.jpg',
         price: 579,
         brand: ' HP',
-        rating: 4.4
+        rating: 4.4,
+        numReviews: 10,
+        countInStock: 6,
       },
       {
         _id: '2',
@@ -16,7 +18,9 @@ export default {
         image: '/images/2.jpg',
         price: 549,
         brand: ' Acer',
-        rating: 4.5
+        rating: 4.5,
+        numReviews: 10,
+      countInStock: 7,
       },
       {
         _id: '3',
@@ -25,7 +29,9 @@ export default {
         image: '/images/3.jpg',
         price: 139,
         brand: ' Fire HD',
-        rating: 4.5
+        rating: 4.5,
+        numReviews: 10,
+      countInStock: 6,
       }, {
         _id: '4',
         name: 'Apple iPad Air (10.5-inch, Wi-Fi, 64GB) - Space Gray',
@@ -33,16 +39,20 @@ export default {
         image: '/images/4.jpg',
         price: 479,
         brand: ' Apple',
-        rating: 4.8
+        rating: 4.8,
+        numReviews: 10,
+        countInStock: 0,
         },
         {
-            _id: '5',
-            name: 'Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox (STGX2000400)',
-            category: 'Storage and Hardware devices',
-            image: '/images/5.jpg',
-            price: 57,
-            brand: ' Seagate',
-            rating: 4.6
+        _id: '5',
+        name: 'Seagate Portable 2TB External Hard Drive Portable HDD – USB 3.0 for PC, Mac, PS4, & Xbox (STGX2000400)',
+        category: 'Storage and Hardware devices',
+        image: '/images/5.jpg',
+        price: 57,
+        brand: ' Seagate',
+        rating: 4.6,
+        numReviews: 10,
+        countInStock: 3,
           },
     ]
   }
