@@ -1,8 +1,8 @@
 import Axios from "axios";
 import {
   ORDER_CREATE_REQUEST, ORDER_CREATE_SUCCESS, ORDER_CREATE_FAIL,
-  ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL, ORDER_PAY_REQUEST, ORDER_PAY_SUCCESS, ORDER_PAY_FAIL
-} from "../constants/ordercons";
+  ORDER_DETAILS_REQUEST, ORDER_DETAILS_SUCCESS, ORDER_DETAILS_FAIL, ORDER_PAY_REQUEST,
+  ORDER_PAY_SUCCESS, ORDER_PAY_FAIL } from "../constants/ordercons";
 
 const createOrder = (order) => async (dispatch, getState) => {
   try {

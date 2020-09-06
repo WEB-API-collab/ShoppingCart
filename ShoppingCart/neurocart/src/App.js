@@ -12,6 +12,7 @@ import ShippingScreen from './pages/shipping';
 import PaymentScreen from './pages/payment';
 import PlaceOrderScreen from './pages/placeOrder';
 import OrderScreen from './pages/order';
+import KommunicateChat from './chat';
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
                 <Link to="/signin">Sign In</Link>
             }
       </div>
+      
     </header> 
 
     <aside className ="sidebar">
@@ -78,6 +80,7 @@ function App() {
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
+            <Route path="/" exact={true} component={KommunicateChat} />
             
           </div>
     </main>
