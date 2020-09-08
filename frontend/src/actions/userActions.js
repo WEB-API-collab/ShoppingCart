@@ -34,7 +34,7 @@ const signin = (email, password) => async (dispatch) => {
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     Cookie.set('userInfo', JSON.stringify(data));
   } catch (error) {
-    dispatch({ type: USER_SIGNIN_FAIL, payload: error.message });
+    dispatch({ type: USER_SIGNIN_FAIL, payload: error.response.data.msg });
   }
 }
 
@@ -47,7 +47,7 @@ const register = (name, email, password) => async (dispatch) => {
     dispatch({ type: USER_SIGNIN_SUCCESS, payload: data });
     Cookie.set('userInfo', JSON.stringify(data));
   } catch (error) {
-    dispatch({ type: USER_REGISTER_FAIL, payload: error.message });
+    dispatch({ type: USER_REGISTER_FAIL, payload: error.response.data.msg });
   }
 }
 
@@ -123,4 +123,4 @@ const logout = () => (dispatch) => {
   dispatch({ type: USER_LOGOUT })
 }
 
-export { signin, register, googleAuth, logout ,update };
+export {signin,register, googleAuth, logout ,update,deleteGoogleuser,googleSignOut};
