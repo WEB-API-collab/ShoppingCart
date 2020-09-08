@@ -55,8 +55,8 @@ function SigninScreen(props) {
           </input>
         </li>
         <li>
-          <button type="submit" className="button primary">Signin</button>
-          <button type="button" className="button google" onClick={googleAuthHandler}>Sign In with Google</button>
+          <button type="submit" className="button primary">Sign-In</button>
+          <button type="button" className="button google" onClick={googleAuthHandler}>Sign-In with Google</button>
         </li>
         <li>
           New to NeuroCart?

@@ -1,8 +1,29 @@
 import express from 'express';
 import User from '../models/userModel';
-import { getToken } from '../util';
+import { getToken, isAuth } from '../util';
 
 const router = express.Router();
+
+router.put('/:id', isAuth, async (req, res) => {
+  const userId = req.params.id;
+  const user = await User.findById(userId);
+  if (user) {
+    user.name = req.body.name || user.name;
+    user.email = req.body.email || user.email;
+    user.password = req.body.password || user.password;
+    const updatedUser = await user.save();
+    res.send({
+      _id: updatedUser.id,
+      name: updatedUser.name,
+      email: updatedUser.email,
+      isAdmin: updatedUser.isAdmin,
+      token: getToken(updatedUser)
+    });
+  } else {
+    res.status(404).send({ msg: 'User Not Found' });
+  }
+
+});
 
 router.post('/signin', async (req, res) => {
 
@@ -17,15 +38,15 @@ router.post('/signin', async (req, res) => {
         email: signinUser.email,
         isAdmin: signinUser.isAdmin,
         token: getToken(signinUser)
-      }, 200)
+      });
   
     } else {
       res.status(401).send({ msg: 'Invalid Email or Password.' });
     }
   
-  })
+  });
 
-  router.post('/signin-google-user', async (req, res) => {
+router.post('/signin-google-user', async (req, res) => {
 
     const signinUser = await User.findOne({
       email: req.body.email
@@ -101,9 +122,9 @@ router.post('/signin', async (req, res) => {
 router.get("/createadmin", async (req, res) => {
   try {
     const user = new User({
-      name: 'Ruvinda',
-      email: 'ruvinda3@gmail.com',
-      password: '1234',
+      name: 'Piumi',
+      email: 'piuminibm.2020@gmail.com',
+      password: '1234*',
       isAdmin: true
     });
     const newUser = await user.save();

@@ -12,6 +12,8 @@ import ShippingScreen from './pages/shipping';
 import PaymentScreen from './pages/payment';
 import PlaceOrderScreen from './pages/placeOrder';
 import OrderScreen from './pages/order';
+import ProfileScreen from './pages/profile';
+import OrdersScreen from './pages/orders';
 import KommunicateChat from './chat';
 
 
@@ -42,13 +44,26 @@ function App() {
       </div>
       
       <div className="header-links">
-        <a href="index.html">Home</a>
+      <Link to="/">Home</Link>
         <a href="index.html">FAQs</a>
         <a href="cart.html">My Cart</a>
             {
               userInfo ? <Link to="/profile">{userInfo.name}</Link> :
                 <Link to="/signin">Sign In</Link>
             }
+
+            {userInfo && userInfo.isAdmin && (
+              <div className="dropdown">
+                <a href="#"  >Admin</a>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/orders">Orders</Link>
+                    <Link to="/products">Products</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+
       </div>
       
     </header> 
@@ -56,10 +71,38 @@ function App() {
     <aside className ="sidebar">
         <h3 className = "main text">Shopping Categories</h3>
         <button className="sidebar-close-button" onClick={closeMenu}>x</button>
-        <ul>
-            <li><a href="index.html">Laptops</a></li> 
+        
+        <ul className="categories">
+            <li>
 
-            <li><a href="index.html">Gaming PCs</a></li> 
+               <Link to="/category/Laptops">Laptops</Link>
+
+            </li> 
+
+            <li> 
+              
+               <Link to="/category/Gaming PCs">Gaming PCs</Link>
+
+            </li>
+
+            <li> 
+              
+               <Link to="/category/CPUs">CPUs</Link>
+
+            </li>
+
+            <li> 
+              
+              <Link to="/category/GPUs">GPUs</Link>
+
+           </li>
+
+           <li> 
+              
+              <Link to="/category/Monitors">Monitors</Link>
+
+           </li>
+
 
 
         </ul>        
@@ -70,6 +113,8 @@ function App() {
     <main className="main">
         <div className="content">
 
+            <Route path="/orders" component={OrdersScreen} />
+            <Route path="/profile" component={ProfileScreen} />
             <Route path="/order/:id" component={OrderScreen} />
             <Route path="/products" component={ProductsScreen} />
             <Route path="/shipping" component={ShippingScreen} />
@@ -79,8 +124,10 @@ function App() {
             <Route path="/register" component={RegisterScreen} />
             <Route path="/product/:id" component={ProductScreen} />
             <Route path="/cart/:id?" component={CartScreen} />
+            <Route path="/category/:id" component={HomeScreen} />
             <Route path="/" exact={true} component={HomeScreen} />
             <Route path="/" exact={true} component={KommunicateChat} />
+            
             
           </div>
     </main>
