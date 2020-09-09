@@ -7,7 +7,7 @@ import store from './store';
 
 var firebase = require("firebase/app");
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyB4HMcAfTPZ88WSOL7mRxoz8uL9WoZBaWI",
   authDomain: "neurocart1.firebaseapp.com",
   databaseURL: "https://neurocart1.firebaseio.com",
